@@ -1,0 +1,13 @@
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\bin\Debug\EasyStone.exe
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\bin\Debug\EasyStone.pdb
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\bin\Debug\Msm.Geometry.dll
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\bin\Debug\Msm.Geometry.pdb
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\obj\Debug\EasyStone.exe
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\obj\Debug\EasyStone.pdb
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\bin\Debug\Tao.OpenGl.dll
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\bin\Debug\Tao.OpenGl.ExtensionLoader.dll
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\bin\Debug\Tao.FreeGlut.dll
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\bin\Debug\Tao.OpenGl.xml
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\bin\Debug\Tao.FreeGlut.xml
+D:\Projects\C#\EasyStone\EasyStone\EasyStone\bin\Debug\Tao.OpenGl.Glu.dll
