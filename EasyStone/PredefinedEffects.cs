@@ -67,12 +67,19 @@ namespace EasyStone
             descriptor.EndColor = new Color4(0, 0, 255, 0);
             descriptor.MinVelocity = 5;
             descriptor.VelocityVariation = 5;
-            descriptor.MinLifetime = 0;
+            descriptor.MinLifetime = 3;
             descriptor.LifetimeVariation = 3;
             ParticleSystem fourth = ParticleSystemFactory.CreateExplosion(descriptor, 1000);
 
+            descriptor.StartColor = new Color4(250, 250, 20, 220);
+            descriptor.EndColor = new Color4(250, 0, 250, 0);
+            descriptor.MinVelocity = 0;
+            descriptor.VelocityVariation = 10;
+            descriptor.MinLifetime = 2;
+            descriptor.LifetimeVariation = 2;
+            ParticleSystem fifth = ParticleSystemFactory.CreateExplosion(descriptor, 1000);
 
-            return new CombinedEffect(first, second, third, fourth);
+            return new CombinedEffect(first, second, third, fourth, fifth);
 
             /*world.AddEffect(new ExplosionEffect(Position, 1000, new Color4(255, 255, 0, 200), new Color4(0, 0, 0, 0), 25, 0, 3, 0));
             world.AddEffect(new ExplosionEffect(Position, 1000, new Color4(255, 100, 0, 220), new Color4(100, 0, 0, 0), 15, 5, 2, 1));

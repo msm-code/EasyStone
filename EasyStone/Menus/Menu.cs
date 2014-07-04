@@ -9,6 +9,7 @@ namespace EasyStone.Menus
     {
         ButtonCollection buttons;
         int selectedNdx;
+        bool initialized;
 
         public Menu()
         {
@@ -18,8 +19,6 @@ namespace EasyStone.Menus
                 if (GameStateChanged != null)
                     GameStateChanged(this, new GameStateChangedEventArgs(new Game(new Map())));
             }));
-            buttons.Add(new MenuButton("View stats", () => { }));
-            buttons.Add(new MenuButton("Null :)", () => { }));
             buttons.Add(new MenuButton("Exit", () => 
             {
                 if (GameStateChanged != null)
@@ -27,9 +26,18 @@ namespace EasyStone.Menus
             }));
             buttons.FixPositions();
         }
-
+        
         public void Update(float delta)
-        { }
+        {
+            if (!initialized) {
+                GlobalInterface.AddInfoBox("Welcome to EASY STONE");
+                GlobalInterface.AddInfoBox("WSAD to move");
+                GlobalInterface.AddInfoBox("Mouse to look");
+                GlobalInterface.AddInfoBox("Enter to select option");
+                GlobalInterface.AddInfoBox("1-6 to select weapon");
+                initialized = true;
+            }
+        }
 
         public void Redraw()
         {

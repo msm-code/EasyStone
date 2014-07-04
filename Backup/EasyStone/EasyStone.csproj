@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <PlatformTarget>x86</PlatformTarget>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE855112-2ACC-4EEE-87D0-CA4F88FCB44F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EasyStone</RootNamespace>
+    <AssemblyName>EasyStone</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="Bullets\Grenade.cs" />
+    <Compile Include="Bullets\SimpleBullet.cs" />
+    <Compile Include="Bullets\BulletBase.cs" />
+    <Compile Include="Camera.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Enemy\FirstBoss.cs" />
+    <Compile Include="Enemy\SecondBoss.cs" />
+    <Compile Include="Enemy\StrongEnemyArmor.cs" />
+    <Compile Include="Engine\CombinedEffect.cs" />
+    <Compile Include="Engine\FramebufferSurface.cs" />
+    <Compile Include="Engine\Particles\NewIdeas\ControllableGenerator.cs" />
+    <Compile Include="Engine\Particles\NewIdeas\DynamicModyifer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Particles\NewIdeas\ExplosionStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Particles\NewIdeas\FountainModyifer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Particles\NewIdeas\FountainStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Particles\NewIdeas\LimitedModyifer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Particles\NewIdeas\ParticleGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Particles\NewIdeas\ParticleStreamGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Particles\NewIdeas\ParticleSystemFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Particles\NewIdeas\RawParticleStreamGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Particles\NewIdeas\RegularModyifer.cs" />
+    <Compile Include="Engine\Particles\PointRenderer.cs" />
+    <Compile Include="Engine\Particles\ParticleSystem.cs" />
+    <Compile Include="Engine\Particles\ParticleRenderer.cs" />
+    <Compile Include="Engine\Particles\ParticleSystemDescriptor.cs" />
+    <Compile Include="Engine\Particles\SerpentRenderer.cs" />
+    <Compile Include="Engine\Particles\SmoothRenderer.cs" />
+    <Compile Include="Engine\Particles\TexturedRenderer.cs" />
+    <Compile Include="Engine\RenderToTextureSurface.cs" />
+    <Compile Include="Engine\TextureRepository.cs" />
+    <Compile Include="ExitGame.cs" />
+    <Compile Include="GraphicsEffect.cs" />
+    <Compile Include="Items\Artifact19.cs" />
+    <Compile Include="Menus\ButtonCollection.cs" />
+    <Compile Include="Menus\Menu.cs" />
+    <Compile Include="Menus\MenuButton.cs" />
+    <Compile Include="Engine\Polygon.cs" />
+    <Compile Include="Engine\PolygonManager.cs" />
+    <Compile Include="Engine\PolygonSurface.cs" />
+    <Compile Include="Engine\PolygonTesselator.cs" />
+    <Compile Include="Engine\Surfaces.cs" />
+    <Compile Include="Engine\Particles\Particle.cs" />
+    <Compile Include="Engine\PrimitiveSurface.cs" />
+    <Compile Include="Engine\Renderer.cs" />
+    <Compile Include="PredefinedEffects.cs" />
+    <Compile Include="SplashScreen.cs" />
+    <Compile Include="ViewStats.cs" />
+    <Compile Include="Waves\SurvivalWave.cs" />
+    <Compile Include="Waves\BossFight.cs" />
+    <Compile Include="Waves\EnemyManager.cs" />
+    <Compile Include="Enemy\SimpleEnemy.cs" />
+    <Compile Include="Enemy\EnemyBase.cs" />
+    <Compile Include="Enemy\ExplosionEnemy.cs" />
+    <Compile Include="Enemy\FastEnemy.cs" />
+    <Compile Include="Enemy\GunnerEnemy.cs" />
+    <Compile Include="Enemy\JumperEnemy.cs" />
+    <Compile Include="Enemy\MotherEnemy.cs" />
+    <Compile Include="GlobalInterface.cs" />
+    <Compile Include="IGameState.cs" />
+    <Compile Include="Items\Aura.cs" />
+    <Compile Include="Items\Gun.cs" />
+    <Compile Include="Items\MachineGun.cs" />
+    <Compile Include="Items\Pistol.cs" />
+    <Compile Include="Bullets\LifetimeLimitedBullet.cs" />
+    <Compile Include="Items\GrenadeLauncher.cs" />
+    <Compile Include="Items\Shotgun.cs" />
+    <Compile Include="Items\Venom.cs" />
+    <Compile Include="Waves\Wave.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="NativeBuffer.cs" />
+    <Compile Include="PlayerMovesCollection.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Rectangle.cs" />
+    <Compile Include="DynamicObject.cs" />
+    <Compile Include="Enemy\StrongEnemy.cs" />
+    <Compile Include="Enemy\SuperEnemy.cs" />
+    <Compile Include="SessionStatistics.cs" />
+    <Compile Include="Waves\NormalWave.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Msm.Geometry, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Msm.Geometry\Msm.Geometry\bin\Debug\Msm.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tao.FreeGlut, Version=2.2.0.0, Culture=neutral, PublicKeyToken=6e602a6ad6c0d06d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Documents\Libs\Tao\bin\Tao.FreeGlut.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenGl, Version=0.0.0.0, Culture=neutral, PublicKeyToken=1ca010269a4501ef">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Documents\Libs\Tao\bin\Tao.OpenGl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenGl.Glu, Version=1.5.0.3, Culture=neutral, PublicKeyToken=3661ea75021374b5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Documents\Libs\Tao\bin\Tao.OpenGl.Glu.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

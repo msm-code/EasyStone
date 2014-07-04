@@ -18,7 +18,7 @@ namespace EasyStone
         public override void Spawn()
         {
             spawned = true;
-            GlobalInterface.AddInfoBox("Specjal event: Survival!");
+            GlobalInterface.AddInfoBox("Special event: Survival!");
         }
 
         public override void Update(float delta)

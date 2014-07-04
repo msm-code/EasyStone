@@ -28,22 +28,22 @@ namespace EasyStone
 
             this.moves.UnlockedMove += (sender, e) =>
             {
-                GlobalInterface.AddInfoBox(e.MoveName + " unlocked !");
+                GlobalInterface.AddInfoBox(e.MoveName + " unlocked!");
             };
 
             this.player.GiveGun(new Pistol(world, player));
 
             this.player.Killed += (sender, e) =>
             {
-                System.Windows.Forms.MessageBox.Show(
-                    "You loose :( \nYou killed " +
-                    SessionStatistics.KillCount +
-                    " enemies, congratulations :)");
-
-                GlobalInterface.AddInfoBox("You died :<");
+                GlobalInterface.AddInfoBox("You are dead :<");
 
                 if (GameStateChanged != null)
-                    GameStateChanged(this, new GameStateChangedEventArgs(new SplashScreen()));
+                {
+                    var splash = new SplashScreen(
+                        "Game over\nVanquished " + SessionStatistics.KillCount + " Enemies",
+                        new Color4(255, 50, 50, 255));
+                    GameStateChanged(this, new GameStateChangedEventArgs(splash));
+                }
             };
 
             TextureRepository.Instance.LoadTexture(@"textures\smoke.png", "smoke");
@@ -53,7 +53,7 @@ namespace EasyStone
             TextureRepository.Instance.LoadTexture(@"textures\bullet.png", "bullet");
             TextureRepository.Instance.LoadTexture(@"textures\metal_test.jpg", "metal");
 
-            GlobalInterface.AddInfoBox("Welcome to game :D");
+            GlobalInterface.AddInfoBox("Game started");
         }
 
         private unsafe void SpawnWave()
@@ -64,7 +64,7 @@ namespace EasyStone
 
             if (oldWave != enemyManager.WaveNumber)
             {
-                GlobalInterface.AddInfoBox("Wave " + enemyManager.WaveNumber + " is incoming!");
+                GlobalInterface.AddInfoBox("Wave " + enemyManager.WaveNumber + " incoming!");
 
                 Glut.glutSetIconTitle("Easy Stone Survival - wave " + enemyManager.WaveNumber);
 
@@ -75,17 +75,22 @@ namespace EasyStone
 
         public void Update(float delta)
         {
+            if (enemyManager.Victory)
+            {
+                GlobalInterface.AddInfoBox("Victory!");
+                GlobalInterface.AddInfoBox("Good Job");
+                var msg = "Victory!\nVanquished " + SessionStatistics.KillCount + " Enemies";
+                var splash = new SplashScreen(msg, new Color4(50, 255, 50, 255));
+                GameStateChanged(this, new GameStateChangedEventArgs(splash));
+            }
+
             enemyManager.Update(delta);
             if (enemyManager.NextWaveReady)
+            {
                 SpawnWave();
+            }
 
             totalTime += delta;
-
-            if (isShooting)
-            {
-                //Vector2 target = ;
-                //player.PerformAction(target.X, target.Y);
-            }
 
             world.Update(delta);
         }
@@ -93,21 +98,6 @@ namespace EasyStone
         public void Redraw()
         {
             world.Redraw();
-
-            /*Gl.glEnable(Gl.GL_TEXTURE_2D);
-
-            Gl.glBindTexture(Gl.GL_TEXTURE_2D, TextureRepository.Instance.GetTexture("smoke"));
-
-            Gl.glBegin(Gl.GL_QUADS);
-            Gl.glTexCoord2d(0.0, 0.0);
-            Gl.glVertex2d(0.0, 0.0);
-            Gl.glTexCoord2d(1.0, 0.0);
-            Gl.glVertex2d(10.0, 0.0);
-            Gl.glTexCoord2d(1.0, 1.0);
-            Gl.glVertex2d(10.0, 10.0);
-            Gl.glTexCoord2d(0.0, 1.0);
-            Gl.glVertex2d(0.0, 10.0);
-            Gl.glEnd();*/
         }
 
         public void KeyDown(byte code)
@@ -150,7 +140,6 @@ namespace EasyStone
                 player.SetVerticalDir(VerticalDir.None);
         }
 
-        private bool isShooting = false;
         private int mouseX;
         private int mouseY;
         public void MouseClick(int button, int state, int x, int y)
@@ -158,6 +147,7 @@ namespace EasyStone
             Vector2 position = Camera.ScreenToGl(x, y);
 
             if (button == Glut.GLUT_LEFT)
+            {
                 if (state == Glut.GLUT_DOWN)
                 {
                     mouseX = x;
@@ -166,7 +156,10 @@ namespace EasyStone
                     player.Gun.BeginShooting(target);
                 }
                 else if (state == Glut.GLUT_UP)
-                   player.Gun.EndShooting();
+                {
+                    player.Gun.EndShooting();
+                }
+            }
         }
 
         public void MouseMove(int x, int y)

@@ -25,14 +25,16 @@ namespace EasyStone.Waves
                boss = new FirstBoss(position, world);
             }
             else
+            {
                 boss = new SecondBoss(position, world);
+            }
             this.theBoss = boss;
 
             base.AddEnemy(boss);
 
             theBoss.Killed += (sender, e) => { 
                 bossDeathTicks = Environment.TickCount;
-                GlobalInterface.AddInfoBox("Boss is dead :D");
+                GlobalInterface.AddInfoBox("Boss defeated!");
             };
         }
 

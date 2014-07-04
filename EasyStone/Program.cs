@@ -13,7 +13,6 @@ namespace EasyStone
 
         static void Main(string[] args)
         {
-            //gameState = new Game(new Map());
             SetState(new Menu());
             InitGlut();
         }

@@ -60,7 +60,7 @@ namespace EasyStone
                 byte alpha = (byte)Math.Min(128, (int)((MaxLifetime - boxes[i].LifeTime) * 100));
                 Vector2 position = Camera.ScreenToGl(10, 60 + i * 50 + (int)offset);
 
-                surface.DrawRectangle(position, new Vector2(11f, 2f), new Color4(230, 230, 230, alpha));
+                surface.DrawRectangle(position, new Vector2(12f, 2f), new Color4(230, 230, 230, alpha));
             }
 
             Renderer.Instance.CommitSurface(surface);

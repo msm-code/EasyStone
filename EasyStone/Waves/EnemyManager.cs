@@ -36,9 +36,9 @@ namespace EasyStone.Waves
             //    this.currentWave = new SurvivalWave(world, WaveNumber);
             //}
             //else
-            if (WaveNumber % 10 == 0)
+            if (WaveNumber % 15 == 0)
             {
-                int bossNr = WaveNumber / 10;
+                int bossNr = WaveNumber / 15;
                 this.currentWave = new BossFight(world, WaveNumber, bossNr);
             }
             else
@@ -48,6 +48,9 @@ namespace EasyStone.Waves
 
             currentWave.Spawn();
         }
+
+        public bool Victory 
+        { get { return WaveNumber > 30; } }
 
         public int WaveNumber
         { get; private set; }

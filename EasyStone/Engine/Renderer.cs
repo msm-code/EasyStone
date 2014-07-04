@@ -35,6 +35,8 @@ namespace EasyStone.Engine
             Gl.glScalef(0.05f, 0.05f, 1);
         }
 
+        public Vector2 ScreenSize { get { return new Vector2(40, 40); } }
+
         public IRectangleSurface CreateRectangleSurface()
         {
             return new PrimitiveSurface(2, 4, 0, Gl.GL_QUADS);

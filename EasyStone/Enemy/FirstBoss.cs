@@ -24,8 +24,6 @@ namespace EasyStone.Enemy
         protected override void OnKilled()
         {
             world.AddEffect(PredefinedEffects.FirstBossKilled(Position));
-            /*world.AddEffect(new ExplosionEffect(Position, 1000, Color4.Black, new Color4(0, 0, 0, 0), 15, 2, 3, 0));
-            world.AddEffect(new ExplosionEffect(Position, 2000, Color4.Red, new Color4(0, 0, 0, 0), 0, 15, 2, 1));*/
 
             base.OnKilled();
         }

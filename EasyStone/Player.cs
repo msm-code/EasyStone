@@ -64,7 +64,7 @@ namespace EasyStone
             if (lifes <= 0)
             { base.Kill(); }
 
-            GlobalInterface.AddInfoBox("They hits you! :/ " + lifes.ToString() + " hp left.");
+            GlobalInterface.AddInfoBox("Ouch! " + lifes.ToString() + " hp left.");
         }
 
         protected override void Collision(DynamicObject other, Vector2 force)
