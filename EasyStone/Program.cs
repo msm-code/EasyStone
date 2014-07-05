@@ -35,7 +35,7 @@ namespace EasyStone
 
             Glut.glutInitWindowSize(800, 800);
             Glut.glutInitWindowPosition(200, 200);
-            wndId = Glut.glutCreateWindow("Welcome!");
+            wndId = Glut.glutCreateWindow("Easy Stone!");
 
             Glut.glutDisplayFunc(Render);
             Glut.glutMouseFunc(Mouse);
